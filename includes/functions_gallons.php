@@ -10,7 +10,7 @@ const LENGTH_TO_VOLUME  = array (
      
 );
 
-// Length
+// Gallons
 
 function convert_to_gallons($value, $fromUnit) {
   

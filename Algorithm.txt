@@ -1,0 +1,13 @@
+Algorithm - Change the following:
+
+functions_gallons.php -------- *
+Title of const array to LENGHT_TO_VOLUME
+Insert new conversions into array
+Change the titles of all functions to reflect gallons
+& LENGTH_TO_VOLUME
+
+Volume.php --------- *
+Change $toValue to Gallons
+Change all select options to required options (Bucket, Butt, etc.)
+Add Volume.php to form Action
+
