@@ -7,7 +7,8 @@ $fromUnit = '';
 $toUnit = '';
 $toValue = '';
 
-if ($_POST['submit']) {
+if (!isset($_POST['submit'])) {
+  $_POST['submit'] = '';
   $fromValue = $_POST['fromValue'];
   $fromUnit = $_POST['fromUnit'];
   $toUnit = $_POST['toUnit'];
@@ -24,14 +25,14 @@ if ($_POST['submit']) {
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Convert Length</title>
+    <title>Convert Gallons</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
 
     <div id="main-content">
 
-      <h1>Convert Length</h1>
+      <h1>Convert Gallons</h1>
   
       <form action="volume.php" method="post">
         
@@ -52,9 +53,9 @@ if ($_POST['submit']) {
           <label>To:</label>&nbsp;
           <input type="text" name="toValue" value="<?php echo $toValue; ?>" />&nbsp;
           <select name="toUnit">
-          <option value="Bucket"<?php if($toUnit == 'Bucket') {echo " selected"; } ?>>1 Bucket</option>
-            <option value="Butt"<?php if($toUnit == 'Butt') {echo " selected"; } ?>>1 Butt</option>
-            <option value="Firkin"<?php if($toUnit == 'Firkin') {echo " selected"; } ?>>1 Firkin</option>
+          <option value="Bucket"<?php if($toUnit == 'Bucket') {echo " selected"; } ?>>1 bucket</option>
+            <option value="Butt"<?php if($toUnit == 'Butt') {echo " selected"; } ?>>1 butt</option>
+            <option value="Firkin"<?php if($toUnit == 'Firkin') {echo " selected"; } ?>>1 firkin</option>
             <option value="HogsHead"<?php if($toUnit == 'HogsHead') {echo " selected"; } ?>>1 hogshead</option>
             <option value="Pint"<?php if($toUnit == 'Pint') {echo " selected"; } ?>>1 pint</option>
             
