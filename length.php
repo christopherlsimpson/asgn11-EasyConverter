@@ -1,6 +1,6 @@
 <?php
 
-function convert_to_meters($value, $from_unit) {
+function convert_to_gallons($value, $from_unit) {
   switch($from_unit) {
     case 'Bucket':
       return $value * 4;
@@ -22,7 +22,7 @@ function convert_to_meters($value, $from_unit) {
   }
 }
   
-function convert_from_meters($value, $to_unit) {
+function convert_from_gallons($value, $to_unit) {
   switch($to_unit) {
     case 'Bucket':
       return $value / 4;
@@ -44,9 +44,9 @@ function convert_from_meters($value, $to_unit) {
   }
 }
 
-function convert_length($value, $from_unit, $to_unit) {
-  $meter_value = convert_to_meters($value, $from_unit);
-  $new_value = convert_from_meters($meter_value, $to_unit);
+function convert_gallons($value, $from_unit, $to_unit) {
+  $meter_value = convert_to_gallons($value, $from_unit);
+  $new_value = convert_from_gallons($meter_value, $to_unit);
   return $new_value;
 }
 
@@ -60,7 +60,7 @@ if($_POST['submit']) {
   $from_unit = $_POST['from_unit'];
   $to_unit = $_POST['to_unit'];
   
-  $to_value = convert_length($from_value, $from_unit, $to_unit);
+  $to_value = convert_gallons($from_value, $from_unit, $to_unit);
 }
 
 ?>
@@ -77,7 +77,7 @@ if($_POST['submit']) {
 
       <h1>Convert Length</h1>
   
-      <form action="" method="post">
+      <form action="volume.php" method="post">
         
         <div class="entry">
           <label>From:</label>&nbsp;
